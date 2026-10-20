@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import lec04_team3.database.model.Chamber;
 import lec04_team3.database.model.ChamberMapper;
+import lec04_team3.database.model.ChamberUser;
 
 /**
  * /sample3へのリクエストを扱うクラス authenticateの設定をしていれば， /sample3へのアクセスはすべて認証が必要になる
@@ -39,6 +40,11 @@ public class Sample41Controller {
   @GetMapping("step5")
   public String sample45() {
     return "sample45.html";
+  }
+
+  @GetMapping("step6")
+  public String sample46() {
+    return "sample46.html";
   }
 
   /**
@@ -84,5 +90,13 @@ public class Sample41Controller {
     ArrayList<Chamber> chambers5 = chamberMapper.selectAllByChamberName(chamberName);
     model.addAttribute("chambers5", chambers5);
     return "sample45.html";
+  }
+
+  @GetMapping("step7")
+  @Transactional
+  public String sample47(ModelMap model) {
+    ArrayList<ChamberUser> chamberUsers7 = chamberMapper.selectAllChamberUser();
+    model.addAttribute("chamberUsers7", chamberUsers7);
+    return "sample46.html";
   }
 }
