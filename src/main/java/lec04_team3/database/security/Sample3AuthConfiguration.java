@@ -13,7 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class Sample3AuthConfiguration {
   /**
-   * 認可処理に関する設定です（認証されたユーザがどこにアクセスできるか）
+   * 認可処理に関する設定（認証されたユーザがどこにアクセスできるか）
    *
    * @param http
    * @return
